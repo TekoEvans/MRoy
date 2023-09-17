@@ -22,7 +22,7 @@ use App\Http\Controllers\ResevationMailController;
 */
 
 
-Route::get('/', [CocktailController::class,'index1'])->middleware('auth', 'verified')->name('home');
+Route::get('/', [CocktailController::class,'index1']);
 
 
 
