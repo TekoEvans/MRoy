@@ -45,33 +45,33 @@
     <meta name="msapplication-TileColor" content="#ffcd38" />
     <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffcd38" />
-     <!-- Fonts -->
-     <link rel="preconnect" href="https://fonts.bunny.net">
-     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-     <!-- Scripts -->
-     @vite([ 'resources/js/app.js','resources/js/app.js'])
+    <!-- Scripts -->
+    @vite(['resources/js/app.js', 'resources/js/app.js'])
 </head>
 
 <body>
     <!-- Preloader Area -->
     <div id="preloader">
-        <div id="status" >
+        <div id="status">
             <img src="assets/img/loader.gif" alt="img" />
 
         </div>
         @auth
-        <div  id="status" class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
-                        {{ __("You're logged in!") }}
+            <div id="status" class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 text-gray-900 dark:text-gray-100">
+                            {{ __("You're logged in!") }}
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-@endauth
+        @endauth
     </div>
 
 
@@ -83,7 +83,7 @@
                 <div class="drodo-responsive-menu">
                     <div class="logo">
                         <a href="#">
-                            <img style="width: 1000px; height: 10px;" src="assets/img/logo-.png" alt="logo">
+                            <img style="width: 50px; height: 50px;" src="assets/img/logo.png" alt="logo">
                         </a>
                     </div>
                 </div>
@@ -118,83 +118,82 @@
                         </ul>
 
                         @if (Route::has('login'))
-                        <div class="others-option">
+                            <div class="others-option">
 
-                            <div class="option-item">
+                                <div class="option-item">
 
-                                <ul class="navbar-nav" class="dropdown-menu">
-                                    @auth
+                                    <ul class="navbar-nav" class="dropdown-menu">
+                                        @auth
 
 
-                                    <li class="nav-item"><a href="#" class="nav-link">{{ Auth::user()->name }} <i
-                                        class='fas fa-chevron-down'></i></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href= "{{ 'profile' }}" >profile</a></li>
-                                            <form method="POST" action="{{ route('logout') }}">
-                                                @csrf
+                                            <li class="nav-item"><a href="#"
+                                                    class="nav-link">{{ Auth::user()->name }} <i
+                                                        class='fas fa-chevron-down'></i></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="{{ 'profile' }}">profile</a></li>
+                                                    <form method="POST" action="{{ route('logout') }}">
+                                                        @csrf
 
-                                                <x-dropdown-link :href="route('logout')"
-                                                        onclick="event.preventDefault();
+                                                        <x-dropdown-link :href="route('logout')"
+                                                            onclick="event.preventDefault();
                                                                     this.closest('form').submit();">
-                                                    {{ __('Log Out') }}
-                                                </x-dropdown-link>
-                                            </form>
+                                                            {{ __('Log Out') }}
+                                                        </x-dropdown-link>
+                                                    </form>
+                                                </ul>
+                                            </li>
+                                            @if (Auth::user()->isAdmin)
+                                                <li class="nav-item"><a href="/admin" class="nav-link">Admin
+                                                    </a>
+                                                </li>
+                                            @else
+                                                <div class="others-option">
+
+                                                    <div class="option-item">
+                                                        <div class="cart-btn">
+                                                            <a href="#" data-bs-toggle="modal"
+                                                                data-bs-target="#shoppingCartModal"><i
+                                                                    class='fas fa-shopping-bag'></i><span>3</span></a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            @endif
+                                        @else
+                                            <li class="nav-item">
+                                                <div class="cart-btn">
+
+                                                    <a href="{{ 'login' }}" class="nav-link"> Login
+                                                    </a>
+
+                                                </div>
+
+                                            </li>
+
+                                            @if (Route::has('register'))
+                                                <li class="nav-item">
+                                                    <div class="cart-btn">
+
+                                                        <a href="{{ 'register' }}" class="nav-link"> register </a>
+
+                                                    </div>
+
+                                                </li>
+                                            @endif
                                         </ul>
-                                    </li>
-                                    @if (Auth::user()->isAdmin)
 
-                                    <li class="nav-item"><a href="/admin" class="nav-link">Admin
-                                        </a>
-                                    </li>
-
-                                    @else
-                                    <div class="others-option">
-
-                                        <div class="option-item">
-                                            <div class="cart-btn">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#shoppingCartModal"><i
-                                                        class='fas fa-shopping-bag'></i><span>3</span></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    @endif
-                                    @else
-
-                                    <li class="nav-item">
-                                        <div class="cart-btn">
-
-                                            <a href="{{ 'login' }}" class="nav-link"> Login
-                                            </a>
-
-                                        </div>
-
-                                    </li>
-
-                                    @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <div class="cart-btn">
-
-                                            <a href="{{ 'register' }}" class="nav-link"> register </a>
-
-                                        </div>
-
-                                    </li>
-                                    @endif
-                                </ul>
-
-                               @endauth
-                            </div>
-                            @endif
-                        </div>
+                                    @endauth
+                                </div>
+                        @endif
                     </div>
-                </nav>
             </div>
+            </nav>
         </div>
+    </div>
     </div>
 
 
-                                                    @yield('content')
+    @yield('content')
 
 
     <!-- footer Area -->
@@ -216,10 +215,12 @@
 
 
                                 <li>
-                                    <a href="https://www.instagram.com/p/CpyLskyttvd/?igshid=ODBmMmZkNzkxZQ=="><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.instagram.com/p/CpyLskyttvd/?igshid=ODBmMmZkNzkxZQ=="><i
+                                            class="fab fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/p/CpyLskyttvd/?igshid=ODBmMmZkNzkxZQ=="><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="https://www.instagram.com/p/CpyLskyttvd/?igshid=ODBmMmZkNzkxZQ=="><i
+                                            class="fab fa-google-plus-g"></i></a>
                                 </li>
                             </ul>
                         </div>

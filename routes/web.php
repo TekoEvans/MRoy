@@ -24,8 +24,9 @@ use App\Http\Controllers\ResevationMailController;
 
 Route::get('/', [CocktailController::class,'index1']);
 
+ 
 
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 Route::get('/admin', function () {
     return view('layouts.masterAdmin');
 })->middleware(['auth', 'verified']);
