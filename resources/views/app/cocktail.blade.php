@@ -8,7 +8,7 @@
                      <div class="common_banner_text">
                          <h2>Cocktail</h2>
                          <ul>
-                             <li><a href="index.html">Home</a></li>
+                             <li><a href="/">Home</a></li>
                              <li><i class="fas fa-slash"></i></li>
                              <li class="active">Shop</li>
                          </ul>

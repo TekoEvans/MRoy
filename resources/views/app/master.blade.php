@@ -202,7 +202,7 @@
                             <form>
                                 <div class="mc-form">
                                     <input class="form-control" type="email" required=""
-                                        placeholder="Your Mail*" name="EMAIL" value="" />
+                                        placeholder="degbeekoue3@gmail.com" name="EMAIL" value="" />
                                     <div class="clear">
                                         <button class="theme-btn-one btn_md" type="submit" name="subscribe"
                                             value="">

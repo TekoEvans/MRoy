@@ -127,6 +127,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-4 col-sm-6 col-12">
                     <div class="blog_one_item img-zoom-hover">
                         <div class="blog_one_img">
@@ -241,9 +242,10 @@
                 </div>
 
             </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-                    <div class="blog_one_item img-zoom-hover">
-                        <div class="blog_one_img">
+          
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="blog_one_item img-zoom-hover">
+                    <div class="blog_one_img">
 
                             <img src="assets/img/blog/post2.png" alt="img" />
 
@@ -302,7 +304,7 @@
                 <div class="col-lg-12">
                     <div class="center_heading">
                         <h2>Follow Us Instagram</h2>
-                        <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
+                        <p>La puissance du mixage, la saveur à son sommet </p>
                     </div>
                 </div>
             </div>
@@ -366,7 +368,7 @@
                         <div class="instgram_post">
 
                             <i class="fab fa-instagram"></i>
-                            <img src="assets/img/instagram/post1.png" alt="img" />
+                            <img src="assets/img/instagram/post8.png" alt="img" />
 
                         </div>
                         <div class="instgram_post">
@@ -378,7 +380,7 @@
                         <div class="instgram_post">
 
                             <i class="fab fa-instagram"></i>
-                            <img src="assets/img/instagram/post12.png" alt="img" />
+                            <img src="assets/img/instagram/post5.png" alt="img" />
 
                         </div>
                     </div>
