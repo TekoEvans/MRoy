@@ -87,8 +87,8 @@ Route::get('/contact', function () {
 
 Route::get('/newReservation' , function () {
     return view('app.add-resevation');
-})->middleware(['auth', 'verified']);
-
+})->middleware(['auth']);
+// , 'verified'
 
 
 Route::middleware('auth')->group(function () {
